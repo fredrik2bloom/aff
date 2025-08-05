@@ -1,21 +1,5 @@
 {
   "node": {
-    "3e58a0c6d7f3bd133f6a132fe64526fe7fe21f58": {
-      "workers": {
-        "app/om-oss/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fom-oss%2Fpage.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/om-oss/page": "rsc"
-      }
-    },
-    "f3ce8bea70f72fc82a03fa4799657cb5502e0ec5": {
-      "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fpage.tsx%22%2C%5B%22HomePage%22%2C%22metadata%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/page": "rsc"
-      }
-    },
     "24d022f799bf41194b071118cdbfc52a55aeb89b": {
       "workers": {
         "app/kontakt/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fkontakt%2Factions.ts%22%2C%5B%22sendEmail%22%5D%5D%5D&__client_imported__=true!"
@@ -23,40 +7,8 @@
       "layer": {
         "app/kontakt/page": "action-browser"
       }
-    },
-    "ce9b469cc8eacf37087058bd1d4c9b856a63496d": {
-      "workers": {
-        "app/om-oss/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fom-oss%2Fpage.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/om-oss/page": "rsc"
-      }
-    },
-    "db0a359539368660ad1f7ec2d48647ecef69af97": {
-      "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fpage.tsx%22%2C%5B%22HomePage%22%2C%22metadata%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/page": "rsc"
-      }
-    },
-    "402817942215b1577ecb050dbfaefbca7116ac54": {
-      "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fpage.tsx%22%2C%5B%22HomePage%22%2C%22metadata%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/page": "rsc"
-      }
-    },
-    "7c1d89be4b894edba8b17f0be146b788b4c43bcf": {
-      "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fpage.tsx%22%2C%5B%22HomePage%22%2C%22metadata%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/page": "rsc"
-      }
     }
   },
   "edge": {},
-  "encryptionKey": "lUSLkVq8r2AOWHvgyw/7fwSTJCNGNL/bjd3nSdk1Bco="
+  "encryptionKey": "XBW6Uj9WoPQRXkUcm0x/oChep/h+X01Fd8WltOTfrL8="
 }

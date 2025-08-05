@@ -1,8 +1,5 @@
 // ================================================================
-// FILE: src/app/layout.tsx (MODIFIED)
-// ================================================================
-// The root layout now includes default metadata, a metadataBase for
-// resolving relative URLs, and Organization JSON-LD structured data.
+// FILE: src/app/layout.tsx (FIXED)
 // ================================================================
 import './globals.css'
 import { Toaster } from "@/components/ui/toaster";
@@ -10,26 +7,22 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from 'next';
 
-// Define the site's base URL and default metadata
 const siteConfig = {
-    name: "Casino Utan Svensk Licens",
-    url: "https://www.casinoutansvensklicens.eu",
-    ogImage: "https://www.casinoutansvensklicens.eu/og-image.png", // Create this image
-    description: "Hitta de bästa casinon utan svensk licens. Expertanalyser, topplistor och exklusiva bonusar för svenska spelare.",
-    author: "casinoutansvensklicens.eu",
+  name: "Casino Utan Svensk Licens",
+  url: "https://www.casinoutansvensklicens.eu",
+  ogImage: "https://www.casinoutansvensklicens.eu/og.png",
+  description: "Hitta de bästa casinon utan svensk licens. Expertanalyser, topplistor och exklusiva bonusar för svenska spelare.",
+  author: "casinoutansvensklicens.eu",
 };
 
-// Define root metadata
 export const metadata: Metadata = {
-  // metadataBase is crucial for resolving relative paths in OG images, etc.
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`, // Adds site name to page titles
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  
-  // For web crawlers
+
   robots: {
     index: true,
     follow: true,
@@ -42,7 +35,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // For social sharing (Open Graph)
   openGraph: {
     url: siteConfig.url,
     title: siteConfig.name,
@@ -60,47 +52,42 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // For Twitter sharing
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@YourTwitterHandle', // Add your twitter handle
   },
 
-  // For PWA and mobile
   manifest: '/manifest.webmanifest',
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
+    icon: [
+      { url: '/favicon/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/favicon/apple-touch-icon.png',
+    shortcut: '/favicon/favicon.ico',
   },
-  
-  // Author and canonical URL
+
   authors: [{ name: siteConfig.author, url: siteConfig.url }],
   alternates: {
     canonical: '/',
-  }
+  },
 };
 
-// Organization JSON-LD Schema
 const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Casino Utan Svensk Licens",
-    "url": "https://www.casinoutansvensklicens.eu",
-    "logo": "https://www.casinoutansvensklicens.eu/logo2.webp",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+46-XXX-XXX-XX", // Optional: Add a contact number
-      "contactType": "Customer Service",
-      "email": "info@casinoutansvensklicens.eu"
-    },
-    "sameAs": [
-      // "https://www.facebook.com/your-page",
-      // "https://www.twitter.com/your-handle",
-      // "https://www.instagram.com/your-profile"
-    ]
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Casino Utan Svensk Licens",
+  "url": "https://www.casinoutansvensklicens.eu",
+  "logo": "https://www.casinoutansvensklicens.eu/logo2.webp",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "info@casinoutansvensklicens.eu"
+  },
+  "sameAs": []
 };
 
 export default function RootLayout({
@@ -111,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="sv" suppressHydrationWarning>
       <head>
-        {/* Add JSON-LD structured data to the head */}
+        {/* Add JSON-LD structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -125,5 +112,5 @@ export default function RootLayout({
         </TooltipProvider>
       </body>
     </html>
-  )
+  );
 }

@@ -3,8 +3,8 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.casinoutansvensklicens.eu';
 
-  // Add static routes
-  const staticRoutes = [
+  // Add static routes with explicit typing to satisfy TypeScript
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/om-oss`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.5,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/kontakt`,
@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // If you had dynamic routes, you would fetch them here and map them
   // Example:
   // const posts = await fetch('https://.../posts').then((res) => res.json());
-  // const postRoutes = posts.map((post) => ({
+  // const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
   //   url: `${baseUrl}/blog/${post.slug}`,
   //   lastModified: new Date(post.updatedAt),
   //   changeFrequency: 'weekly',
