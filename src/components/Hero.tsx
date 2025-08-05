@@ -3,47 +3,50 @@ import Image from 'next/image';
 import Link from 'next/link';
 import StarRating from './ui/StarRating';
 import { Button } from './ui/button';
-
-// 1. Import the getter function from your new service
 import { getFeaturedHeroCasino } from '@/lib/data-service';
 
 const Hero = () => {
-  // 2. Call the function to get the data
   const featured = getFeaturedHeroCasino();
 
-  // Handle case where data might not be found
-  if (!featured) return <div>Featured casino not found.</div>;
+  if (!featured) {
+    return <div>Featured casino not found.</div>;
+  }
 
   return (
-    <section className="relative overflow-hidden bg-hero-gradient">
+    // --- CHANGES FOR FULL SCREEN LAYOUT ---
+    // 1. Added h-screen to set height to 100% of viewport height.
+    // 2. Added flex, flex-col, and justify-center to vertically center the content.
+    <section className="relative flex flex-col justify-center overflow-hidden bg-hero-gradient h-screen">
       {/* Clover background */}
       <div
         className="absolute inset-0 opacity-15 mix-blend-multiply"
         style={{
-            backgroundImage: 'url("/clover.png")',
+          backgroundImage: 'url("/clover.png")',
         }}
-        ></div>
+      ></div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 text-center text-primary-foreground sm:px-6 lg:py-28 lg:px-8">
-        <h1 className="text-4xl font-extrabold leading-tight md:text-6xl lg:text-7xl">
+      {/* 3. Removed vertical padding (py-20, lg:py-28) to allow for true centering */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 text-center text-primary-foreground sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
           Casino Utan Svensk Licens
         </h1>
         <p className="mt-4 text-lg font-semibold text-primary-glow">
           Bäst casino utan svensk licens -{' '}
           {new Date()
             .toLocaleDateString('sv-SE', { month: 'long', year: 'numeric' })
-            .replace(/^\w/, (c) => c.toUpperCase())}!
+            .replace(/^\w/, (c) => c.toUpperCase())}
+          !
         </p>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl bg-background/10 backdrop-blur-md border border-primary-foreground/20 p-6 shadow-premium md:p-8">
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
-              <div className="h-10 mb-2">
+              <div className="h-10 mb-2 flex items-center">
                 <Image
-                  src={featured.logoWhiteUrl || featured.logoUrl} // Use white logo if available
+                  src={featured.logoWhiteUrl || featured.logoUrl}
                   alt={`${featured.name} logo`}
-                  width={120}
-                  height={40}
+                  width={200}
+                  height={80}
                   className="object-contain"
                 />
               </div>
@@ -70,7 +73,12 @@ const Hero = () => {
 
             <div className="w-full">
               <Link href={featured.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored">
-                <Button>Prova {featured.name} nu! →</Button>
+                <Button 
+                  size="lg" 
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-4 px-6 text-lg shadow-large transition-transform transform hover:scale-105"
+                >
+                  Besök här →
+                </Button>
               </Link>
             </div>
           </div>

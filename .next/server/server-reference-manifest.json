@@ -1,14 +1,5 @@
 {
-  "node": {
-    "24d022f799bf41194b071118cdbfc52a55aeb89b": {
-      "workers": {
-        "app/kontakt/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsimon%2FDownloads%2Fnext-app%2Fsrc%2Fapp%2Fkontakt%2Factions.ts%22%2C%5B%22sendEmail%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/kontakt/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "XBW6Uj9WoPQRXkUcm0x/oChep/h+X01Fd8WltOTfrL8="
+  "encryptionKey": "hT6pkgplKkHgtZPz7mLMBacea2f8KQLTTuL05oJfPdo="
 }

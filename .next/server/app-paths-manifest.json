@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/om-oss/page": "app/om-oss/page.js"
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js"
 }

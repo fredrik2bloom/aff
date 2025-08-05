@@ -11,7 +11,7 @@ import { Metadata } from "next";
 
 // Page-specific metadata
 export const metadata: Metadata = {
-  title: 'Topplista 2025: Bästa Casino Utan Svensk Licens',
+  title: 'Bästa Casino Utan Svensk Licens',
   description: 'Hitta och jämför de bästa casinon utan svensk licens. Vi rankar sidor baserat på bonusar, spelutbud, säkerhet och snabba uttag.',
   alternates: {
     canonical: '/',
@@ -42,15 +42,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <div className="min-h-screen bg-background">
-        <AgeVerificationModal />
-        <Header />
         <Hero />
-        <CasinoCardsSection />
-        <ComparisonTable />
-        <EvaluationMethodology />
-        <DetailedCasinoAnalysis />
-        <CasinoSpecialties />
-        <Footer />
       </div>
     </>
   );
