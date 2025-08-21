@@ -1,4 +1,8 @@
 {
+  "/kontakt/page": "app/kontakt/page.js",
+  "/om-oss/page": "app/om-oss/page.js",
+  "/neutral/page": "app/neutral/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/page": "app/page.js"
 }

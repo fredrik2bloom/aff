@@ -65,15 +65,7 @@ export default function OmOssPage() {
                 </p>
               </div>
             </div>
-
             <div className="relative bg-surface-elevated rounded-lg p-8 border border-border overflow-hidden">
-              <div
-                className="absolute inset-0 opacity-5 mix-blend-multiply"
-                style={{
-                  backgroundImage: 'url("/clover.png")',
-                  backgroundSize: '300px',
-                }}
-              ></div>
               <div className="relative">
                 <h2 className="text-2xl font-bold text-primary mb-16 text-center">Möt våra experter</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-8">
@@ -110,6 +102,40 @@ export default function OmOssPage() {
                 </div>
               </div>
             </div>
+
+            {/* Ny sektion: Hållbart & Ansvarsfullt Spelande */}
+            <div className="bg-surface-elevated rounded-lg p-8 border border-border">
+              <h2 className="text-2xl font-bold text-primary mb-4">Hållbart & Ansvarsfullt Spelande</h2>
+              <p className="text-muted-foreground">
+                Vi anser att spelande ska vara underhållning, inte en källa till problem. Därför lyfter vi alltid fram vikten av 
+                ansvarsfullt spelande och ger våra läsare verktyg och resurser för att hålla spelandet sunt och hållbart. 
+                Vi uppmuntrar till att sätta gränser, ta pauser och söka hjälp om spelandet skulle kännas överväldigande. 
+                Vårt mål är att främja en trygg och ansvarsfull spelupplevelse där nöje står i centrum.
+              </p>
+
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-primary mb-2">Externa resurser & stöd</h3>
+                <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                  <li>
+                    <a href="https://stodlinjen.se/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Stödlinjen (Sverige)
+                    </a> – Erbjuder anonym och kostnadsfri rådgivning kring spelproblem.
+                  </li>
+                  <li>
+                    <a href="https://www.gamblingtherapy.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Gambling Therapy
+                    </a> – Internationellt stöd online för personer med spelrelaterade problem.
+                  </li>
+                  <li>
+                    <a href="https://spelpaus.se/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Spelpaus
+                    </a> – Svensk tjänst för självavstängning från alla licensierade spelbolag.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            
           </div>
         </div>
       </main>

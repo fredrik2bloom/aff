@@ -42,7 +42,15 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <div className="min-h-screen bg-background">
+        <AgeVerificationModal />
+        <Header />
         <Hero />
+        <CasinoCardsSection />
+        <ComparisonTable />
+        <EvaluationMethodology />
+        <DetailedCasinoAnalysis />
+        <CasinoSpecialties />
+        <Footer />
       </div>
     </>
   );

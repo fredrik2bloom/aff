@@ -39,7 +39,7 @@ const CasinoSpecialties = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
-            <Trophy className="mr-2 h-4 w-4" />
+            <Trophy className="mr-2 h-10 w-10" />
             Casinon som matchar dina behov
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-6">

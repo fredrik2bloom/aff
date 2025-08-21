@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="w-full border-t border-slate-800 my-12"></div>
 
         {/* Main Content: 4-Column Layout */}
-        <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-2 lg:grid-cols-4">
           
           {/* Column 1: About Us */}
           <div className="space-y-4">
@@ -75,6 +75,14 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Column 4: Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-white uppercase tracking-wider">Snabblänkar</h3>
+            <ul className="space-y-2 text-slate-400">
+              <li><a href="/kontakt" className="hover:text-white hover:underline">Kontakta oss</a></li>
+              <li><a href="/om-oss" className="hover:text-white hover:underline">Om oss</a></li>
+            </ul>
+          </div>
 
         </div>
 

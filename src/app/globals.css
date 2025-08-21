@@ -42,7 +42,7 @@
     --ring: 258 90% 66%;
 
     /* Casino-specific tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(238, 70%, 17%), hsl(240, 52%, 31%));
+    --hero-gradient: linear-gradient(180deg, hsl(238, 65%, 32%), hsl(251, 73%, 66%));
     --hero-pattern: linear-gradient(135deg, hsla(0, 0%, 56%, 0.1), hsl(240 100% 27% / 0.1));
     --premium-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(213 94% 68%));
     --surface-elevated: 0 0% 98%;

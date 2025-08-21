@@ -13,20 +13,15 @@ const Hero = () => {
   }
 
   return (
-    // --- CHANGES FOR FULL SCREEN LAYOUT ---
-    // 1. Added h-screen to set height to 100% of viewport height.
-    // 2. Added flex, flex-col, and justify-center to vertically center the content.
-    <section className="relative flex flex-col justify-center overflow-hidden bg-hero-gradient h-screen">
+    <section className="relative overflow-hidden bg-hero-gradient">
       {/* Clover background */}
       <div
         className="absolute inset-0 opacity-15 mix-blend-multiply"
-        style={{
-          backgroundImage: 'url("/clover.png")',
-        }}
-      ></div>
+        style={{ backgroundImage: 'url("/clover.png")' }}
+      />
 
-      {/* 3. Removed vertical padding (py-20, lg:py-28) to allow for true centering */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 text-center text-primary-foreground sm:px-6 lg:px-8">
+      {/* Regular vertical padding */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 text-center text-primary-foreground sm:px-6 lg:px-8 lg:py-28">
         <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
           Casino Utan Svensk Licens
         </h1>
@@ -73,8 +68,8 @@ const Hero = () => {
 
             <div className="w-full">
               <Link href={featured.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-4 px-6 text-lg shadow-large transition-transform transform hover:scale-105"
                 >
                   Besök här →
