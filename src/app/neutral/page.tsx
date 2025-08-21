@@ -42,7 +42,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <div className="min-h-screen bg-background">
-        <AgeVerificationModal />
         <Header />
         <NeutralHero />
         <NeutralCasinoCardsSection/>
