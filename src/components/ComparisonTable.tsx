@@ -14,31 +14,22 @@ const ComparisonTable = () => {
     return { text: `#${rank}`, variant: 'secondary' as const };
   };
 
-  // Distinct row styles: gold (1), silver (2), bronze (3)
   const getRowClassName = (rank: number, index: number) => {
     let classes = 'transition-all duration-300';
 
     if (rank === 1) {
-      // Gold
       classes += ' bg-amber-50/50 dark:bg-amber-900/10 border-l-4 border-amber-400';
     } else if (rank === 2) {
-      // Silver
       classes += ' bg-gray-50/50 dark:bg-gray-800/10 border-l-4 border-gray-400';
     } else if (rank === 3) {
-      // Bronze
       classes += ' bg-orange-50/50 dark:bg-orange-900/10 border-l-4 border-orange-400';
     } else {
-      // Standard alternating for others
       classes += index % 2 === 0 ? ' bg-background' : ' bg-surface-elevated/30';
     }
 
-    // Common hover effect
-    classes += ' hover:bg-slate-100 hover:dark:bg-slate-700/50 hover:shadow-md hover:scale-[1.01]';
-
-    return classes;
+    return classes + ' hover:bg-slate-100 hover:dark:bg-slate-700/50 hover:shadow-md hover:scale-[1.01]';
   };
 
-  // Badge (left circle) colors to match gold/silver/bronze
   const getRankBadgeClass = (rank: number) => {
     if (rank === 2) return 'bg-gray-300 text-gray-800 dark:bg-gray-600 dark:text-gray-50';
     if (rank === 3) return 'bg-orange-300 text-orange-900 dark:bg-orange-700 dark:text-orange-50';
@@ -78,9 +69,17 @@ const ComparisonTable = () => {
                   <Clock className="mx-auto h-4 w-4" />
                 </th>
                 <th scope="col" className="w-20 px-4 py-5 text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">Betyg</th>
-                <th scope="col" className="w-24 px-4 py-5 text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">Besök</th>
+
+                {/* Hide dedicated CTA column on mobile; show on sm+ */}
+                <th
+                  scope="col"
+                  className="w-24 px-4 py-5 text-center text-xs font-bold uppercase tracking-wider text-muted-foreground hidden sm:table-cell"
+                >
+                  Besök
+                </th>
               </tr>
             </thead>
+
             <tbody className="divide-y divide-border">
               {tableData.map((row, index) => {
                 const rank = index + 1;
@@ -96,18 +95,16 @@ const ComparisonTable = () => {
                           <span className="text-xs -mt-1">Nr. {rank}</span>
                         </div>
                       ) : (
-                        <div
-                          className={`flex h-10 w-10 items-center justify-center rounded-full font-bold ${getRankBadgeClass(rank)}`}
-                        >
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-full font-bold ${getRankBadgeClass(rank)}`}>
                           {rank}
                         </div>
                       )}
                     </td>
 
-                    {/* Casino */}
+                    {/* Casino (with MOBILE-ONLY CTA) */}
                     <td className="px-6 py-6">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0">
+                      <div className="flex items-center gap-4">
+                        <div className="shrink-0">
                           <Image
                             src={row.logoUrl}
                             alt={`${row.name} logo`}
@@ -116,11 +113,25 @@ const ComparisonTable = () => {
                             className="rounded-lg object-contain"
                           />
                         </div>
-                        <div className="flex-1 min-w-0">
+                        <div className="min-w-0 flex-1">
                           <div className="text-base font-semibold text-foreground truncate">{row.name}</div>
                           <Badge variant={rankTag.variant} className="mt-1 text-xs">
                             {rankTag.text}
                           </Badge>
+
+                          {/* MOBILE-ONLY CTA */}
+                          <div className="mt-3 sm:hidden">
+                            <Button
+                              variant={rank === 1 ? 'default' : 'outline'}
+                              size="sm"
+                              className="w-full font-semibold"
+                              asChild
+                            >
+                              <a href={row.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored">
+                                {rank === 1 ? 'Spela nu' : 'Besök'}
+                              </a>
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -181,12 +192,12 @@ const ComparisonTable = () => {
                       </div>
                     </td>
 
-                    {/* Button */}
-                    <td className="px-4 py-6 text-center">
+                    {/* Right-side CTA (HIDDEN on mobile) */}
+                    <td className="px-4 py-6 text-center hidden sm:table-cell">
                       <Button
                         variant={rank === 1 ? 'default' : 'outline'}
                         size="sm"
-                        className="transition-transform hover:scale-105 font-semibold"
+                        className="transition-transform hover:scale-105 font-semibold w-full sm:w-auto"
                         asChild
                       >
                         <a href={row.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored">
@@ -200,6 +211,11 @@ const ComparisonTable = () => {
             </tbody>
           </table>
         </div>
+
+        {/* Optional mobile hint */}
+        <p className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
+          Kompletta åtgärdsknappar visas i en egen kolumn på större skärmar.
+        </p>
       </div>
     </section>
   );

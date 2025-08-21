@@ -6,7 +6,6 @@ import NeutralDetailedCasinoAnalysis from "@/components/NeutralDetailedCasinoAna
 import NeutralCasinoSpecialties from "../../components/NeutralCasinoSpecialties";
 import NeutralComparisonTable from "@/components/NeutralComparisonTable";
 import Footer from "../../components/Footer";
-import AgeVerificationModal from "../../components/AgeVerificationModal";
 import { Metadata } from "next";
 
 // Page-specific metadata
